@@ -4,10 +4,10 @@ ifstream in("", ios::in);//origin file
 ifstream cfg("g3s.cfg", ios::in);//configuration file
 string fname,gcc_path,mode;
 bool flag;
-stack<bool>loop;
+long long loopheight;
 void inline get_gcc_path(){
 	cout<<"config not found or g++ path not found in config!!!\ng++ path:";
-	cin>>gcc_path;
+	getline(cin,gcc_path);
 	return;
 }
 int main(){
@@ -36,5 +36,7 @@ int main(){
 	ofstream cfg("g3s.cfg", ios::out);
 	cfg<<gcc_path;
 	cfg.close();
+	convert_g3s_cpp();//TODO
+	call_gcc();//TODO
 	return 0;
 }
